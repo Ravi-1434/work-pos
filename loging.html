@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Nexus Dashboard</title>
+
+    <link rel="stylesheet" href="login.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <main class="login-page">
+
+        <!-- Left Section -->
+        <section class="login-brand">
+
+            <div class="brand-content">
+
+                <div class="brand-logo">
+                    S
+                </div>
+
+                <h1>
+                    Welcome to
+                    <span>STACKLY</span>
+                </h1>
+
+                <p>
+                    Manage your business, products, sales,
+                    GST and payments from one powerful dashboard.
+                </p>
+
+                <div class="brand-stats">
+
+                    <div class="stat-item">
+                        <strong>10K+</strong>
+                        <span>Businesses</span>
+                    </div>
+
+                    <div class="stat-item">
+                        <strong>99.9%</strong>
+                        <span>Uptime</span>
+                    </div>
+
+                    <div class="stat-item">
+                        <strong>24/7</strong>
+                        <span>Support</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Right Section -->
+        <section class="login-section">
+
+            <div class="login-card">
+
+                <div class="mobile-logo">
+                    <div class="brand-logo">
+                        N
+                    </div>
+                </div>
+
+                <div class="login-header">
+
+                    <span class="welcome-label">
+                        ACCOUNT LOGIN
+                    </span>
+
+                    <h2>
+                        Sign in to your account
+                    </h2>
+
+                    <p>
+                        Enter your credentials to continue
+                    </p>
+
+                </div>
+
+
+                <!-- Login Form -->
+                <form id="loginForm" novalidate>
+
+                    <!-- Email -->
+                    <div class="form-group">
+
+                        <label for="loginEmail">
+                            Email Address
+                        </label>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">
+                                ✉
+                            </span>
+
+                            <input type="email" id="loginEmail" name="email" placeholder="Enter your email"
+                                autocomplete="email">
+
+                        </div>
+
+                        <small class="field-error" id="emailError"></small>
+
+                    </div>
+
+
+                    <!-- Password -->
+                    <div class="form-group">
+
+                        <div class="password-label-row">
+
+                            <label for="loginPassword">
+                                Password
+                            </label>
+
+                            <a href="#" id="forgotPassword">
+                                Forgot password?
+                            </a>
+
+                        </div>
+
+                        <div class="input-wrapper">
+
+                            <span class="input-icon">
+                                🔒
+                            </span>
+
+                            <input type="password" id="loginPassword" name="password" placeholder="Enter your password"
+                                autocomplete="current-password">
+
+                            <button type="button" class="password-toggle" id="passwordToggle"
+                                aria-label="Show password">
+                                👁
+                            </button>
+
+                        </div>
+
+                        <small class="field-error" id="passwordError"></small>
+
+                    </div>
+
+
+                    <!-- Remember -->
+                    <div class="login-options">
+
+                        <label class="remember-me">
+
+                            <input type="checkbox" id="rememberMe">
+
+                            <span>
+                                Remember me
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- Login Button -->
+                    <button type="submit" class="login-button" id="loginButton">
+
+                        <span class="button-text">
+                            Sign In
+                        </span>
+
+                        <span class="button-loader" id="buttonLoader"></span>
+
+                    </button>
+
+                </form>
+
+
+                <!-- Sign Up -->
+                <div class="signup-link">
+
+                    <span>
+                        Don't have an account?
+                    </span>
+
+                    <a href="signup.html" id="signupLink">
+                        Create account
+                    </a>
+
+                </div>
+
+
+                <!-- Security -->
+                <div class="security-note">
+
+                    <span>🔐</span>
+
+                    <span>
+                        Your information is securely protected
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Center Notification -->
+    <div class="notification" id="notification">
+
+        <div class="notification-icon" id="notificationIcon">
+            !
+        </div>
+
+        <div class="notification-content">
+
+            <strong id="notificationTitle">
+                Error
+            </strong>
+
+            <p id="notificationMessage">
+                Something went wrong.
+            </p>
+
+        </div>
+
+        <button type="button" id="notificationClose" aria-label="Close notification">
+            ×
+        </button>
+
+    </div>
+
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>

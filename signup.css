@@ -1,0 +1,1558 @@
+/* =========================================
+   NEXUS SIGNUP PAGE
+   signup.css
+========================================= */
+
+
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "Inter", sans-serif;
+
+    background: #080b1a;
+
+    color: #ffffff;
+
+    overflow-x: hidden;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+.signup-page {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns: 1.05fr 0.95fr;
+}
+
+
+/* =========================================
+   LEFT BRAND SECTION
+========================================= */
+
+.signup-brand {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 15% 20%,
+            rgba(124, 92, 255, 0.30),
+            transparent 34%),
+        radial-gradient(circle at 85% 75%,
+            rgba(0, 214, 201, 0.20),
+            transparent 35%),
+        linear-gradient(145deg,
+            #11152d 0%,
+            #080b1a 100%);
+}
+
+
+/* =========================================
+   BACKGROUND DECORATIONS
+========================================= */
+
+.brand-decoration {
+    position: absolute;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.brand-decoration-one {
+    width: 520px;
+    height: 520px;
+
+    top: -230px;
+    right: -220px;
+}
+
+.brand-decoration-two {
+    width: 400px;
+    height: 400px;
+
+    bottom: -190px;
+    left: -180px;
+}
+
+.signup-brand::before {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    top: 22%;
+    left: 16%;
+
+    border-radius: 50%;
+
+    background: #8b6cff;
+
+    box-shadow:
+        120px 70px 0 rgba(0, 214, 201, 0.7),
+        300px 170px 0 rgba(139, 108, 255, 0.5),
+        170px 360px 0 rgba(0, 214, 201, 0.4);
+}
+
+
+/* =========================================
+   BRAND CONTENT
+========================================= */
+
+.brand-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 540px;
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.brand-logo {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(135deg,
+            #7c5cff,
+            #00d6c9);
+
+    color: #ffffff;
+
+    font-size: 25px;
+    font-weight: 800;
+
+    box-shadow:
+        0 15px 40px rgba(124, 92, 255, 0.35);
+}
+
+
+/* =========================================
+   BRAND LABEL
+========================================= */
+
+.brand-label {
+    display: block;
+
+    margin-top: 35px;
+
+    color: #8f7aff;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+}
+
+
+/* =========================================
+   BRAND HEADING
+========================================= */
+
+.brand-content h1 {
+    margin-top: 14px;
+
+    color: #ffffff;
+
+    font-size: clamp(42px, 5vw, 68px);
+
+    line-height: 1.03;
+
+    letter-spacing: -3px;
+}
+
+.brand-content h1 span {
+    display: block;
+
+    background:
+        linear-gradient(90deg,
+            #9277ff,
+            #00d6c9);
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+/* =========================================
+   BRAND DESCRIPTION
+========================================= */
+
+.brand-content>p {
+    max-width: 490px;
+
+    margin-top: 25px;
+
+    color: #a5acc7;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.feature-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 22px;
+
+    margin-top: 48px;
+}
+
+.feature-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+}
+
+.feature-icon {
+    flex-shrink: 0;
+
+    width: 31px;
+    height: 31px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: rgba(124, 92, 255, 0.13);
+
+    border: 1px solid rgba(124, 92, 255, 0.25);
+
+    color: #8e78ff;
+
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.feature-item strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #e9ebf7;
+
+    font-size: 13px;
+}
+
+.feature-item span {
+    display: block;
+
+    color: #777f9e;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   RIGHT SIGNUP SECTION
+========================================= */
+
+.signup-section {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 45px 40px;
+
+    background: #f7f8fc;
+
+    color: #15182b;
+}
+
+
+/* =========================================
+   SIGNUP CARD
+========================================= */
+
+.signup-card {
+    width: 100%;
+
+    max-width: 500px;
+
+    padding: 10px;
+}
+
+
+/* =========================================
+   MOBILE LOGO
+========================================= */
+
+.mobile-logo {
+    display: none;
+
+    justify-content: center;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.signup-header {
+    margin-bottom: 25px;
+}
+
+.header-label {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #7058e8;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.signup-header h2 {
+    color: #171a2d;
+
+    font-size: 32px;
+
+    line-height: 1.2;
+
+    letter-spacing: -1.2px;
+}
+
+.signup-header p {
+    margin-top: 8px;
+
+    color: #858ba3;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   PROGRESS
+========================================= */
+
+.progress-container {
+    margin-bottom: 28px;
+}
+
+.progress-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    color: #8b91a7;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+#progressPercent {
+    color: #7058e8;
+
+    font-weight: 800;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 5px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #e7e9f0;
+}
+
+.progress-fill {
+    width: 20%;
+    height: 100%;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(90deg,
+            #7058e8,
+            #00cfc2);
+
+    transition: width 0.35s ease;
+}
+
+
+/* =========================================
+   FORM STEP
+========================================= */
+
+.form-step {
+    display: none;
+
+    animation: stepIn 0.3s ease;
+}
+
+.form-step.active {
+    display: block;
+}
+
+@keyframes stepIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateX(0);
+    }
+}
+
+
+/* =========================================
+   STEP HEADING
+========================================= */
+
+.step-heading {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    margin-bottom: 25px;
+}
+
+.step-number {
+    flex-shrink: 0;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #eeebff;
+
+    color: #7058e8;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.step-heading h3 {
+    color: #1a1d30;
+
+    font-size: 18px;
+
+    line-height: 1.3;
+}
+
+.step-heading p {
+    margin-top: 4px;
+
+    color: #9297aa;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   FORM GROUP
+========================================= */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #292d40;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   INPUT WRAPPER
+========================================= */
+
+.input-wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+
+    left: 16px;
+
+    z-index: 2;
+
+    color: #9197ab;
+
+    font-size: 15px;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.input-wrapper input {
+    width: 100%;
+
+    height: 53px;
+
+    padding:
+        0 47px;
+
+    border: 1px solid #e0e3eb;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #22263a;
+
+    font-size: 13px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.input-wrapper input::placeholder {
+    color: #aeb2c1;
+}
+
+.input-wrapper input:focus {
+    border-color: #7860ed;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px rgba(120, 96, 237, 0.09);
+}
+
+
+/* =========================================
+   VALIDATION STATES
+========================================= */
+
+.input-wrapper.input-error input {
+    border-color: #ee476f;
+
+    background: #fffafb;
+
+    box-shadow:
+        0 0 0 4px rgba(238, 71, 111, 0.07);
+}
+
+.input-wrapper.input-success input {
+    border-color: #18b88a;
+
+    background: #fbfffd;
+
+    box-shadow:
+        0 0 0 4px rgba(24, 184, 138, 0.06);
+}
+
+
+/* =========================================
+   FIELD ERROR
+========================================= */
+
+.field-error {
+    display: block;
+
+    min-height: 15px;
+
+    margin-top: 5px;
+
+    color: #e64067;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================
+   MOBILE INPUT
+========================================= */
+
+.mobile-input {
+    display: flex;
+}
+
+.country-code {
+    position: absolute;
+
+    left: 15px;
+
+    z-index: 2;
+
+    padding-right: 11px;
+
+    border-right: 1px solid #e0e3eb;
+
+    color: #5f657a;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.mobile-input input {
+    padding-left: 68px;
+}
+
+
+/* =========================================
+   PASSWORD TOGGLE
+========================================= */
+
+.password-toggle {
+    position: absolute;
+
+    right: 10px;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #777e95;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease;
+}
+
+.password-toggle:hover {
+    background: #f0f1f5;
+}
+
+
+/* =========================================
+   PASSWORD STRENGTH
+========================================= */
+
+.password-strength {
+    margin-top: 4px;
+
+    margin-bottom: 16px;
+}
+
+.strength-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+
+    color: #8a90a4;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.strength-header strong {
+    color: #999eaf;
+
+    font-size: 10px;
+}
+
+.strength-bar {
+    width: 100%;
+    height: 5px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #e7e9ef;
+}
+
+.strength-bar span {
+    display: block;
+
+    width: 0;
+    height: 100%;
+
+    border-radius: 20px;
+
+    background: #d9dce5;
+
+    transition:
+        width 0.3s ease,
+        background 0.3s ease;
+}
+
+
+/* =========================================
+   PASSWORD RULES
+========================================= */
+
+.password-rules {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 7px 15px;
+
+    margin-bottom: 23px;
+}
+
+.rule {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #999eaf;
+
+    font-size: 10px;
+
+    transition:
+        color 0.2s ease;
+}
+
+.rule>span:first-child {
+    color: #b4b8c6;
+
+    font-size: 14px;
+}
+
+.rule.valid {
+    color: #1aa97e;
+}
+
+.rule.valid>span:first-child {
+    color: #1aa97e;
+}
+
+
+/* =========================================
+   STEP BUTTONS
+========================================= */
+
+.step-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   NEXT BUTTON
+========================================= */
+
+.next-button,
+.signup-button {
+    flex: 1;
+
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(135deg,
+            #7058e8,
+            #8c66f7);
+
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 24px rgba(112, 88, 232, 0.18);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.next-button:hover,
+.signup-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 28px rgba(112, 88, 232, 0.25);
+}
+
+.next-button:active,
+.signup-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-button {
+    width: 100px;
+    height: 52px;
+
+    border: 1px solid #e1e3eb;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #71778c;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.back-button:hover {
+    background: #f7f7fa;
+
+    border-color: #cfd2dc;
+}
+
+
+/* =========================================
+   ACCOUNT SUMMARY
+========================================= */
+
+.account-summary {
+    margin: 20px 0;
+
+    padding: 15px;
+
+    border: 1px solid #e5e6ed;
+
+    border-radius: 13px;
+
+    background: #fafaff;
+}
+
+.summary-title {
+    margin-bottom: 11px;
+
+    color: #6f7489;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+}
+
+.summary-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid #ededf2;
+}
+
+.summary-row:last-child {
+    border-bottom: none;
+}
+
+.summary-row span {
+    color: #969bad;
+
+    font-size: 10px;
+}
+
+.summary-row strong {
+    max-width: 65%;
+
+    overflow: hidden;
+
+    color: #34384b;
+
+    font-size: 10px;
+
+    text-align: right;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   TERMS CHECKBOX
+========================================= */
+
+.terms-checkbox {
+    display: flex !important;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin-top: 4px !important;
+
+    color: #858ba0 !important;
+
+    font-size: 10px !important;
+
+    font-weight: 500 !important;
+
+    line-height: 1.5;
+
+    cursor: pointer;
+}
+
+.terms-checkbox input {
+    flex-shrink: 0;
+
+    width: 15px;
+    height: 15px;
+
+    margin-top: 1px;
+
+    accent-color: #7058e8;
+
+    cursor: pointer;
+}
+
+.terms-checkbox a {
+    color: #7058e8;
+
+    font-weight: 700;
+}
+
+.terms-error {
+    min-height: 17px;
+}
+
+
+/* =========================================
+   SIGNUP BUTTON
+========================================= */
+
+.signup-button {
+    position: relative;
+
+    min-width: 150px;
+}
+
+.signup-button:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================
+   BUTTON LOADER
+========================================= */
+
+.button-loader {
+    display: none;
+
+    width: 17px;
+    height: 17px;
+
+    border: 2px solid rgba(255, 255, 255, 0.35);
+
+    border-top-color: #ffffff;
+
+    border-radius: 50%;
+
+    animation: spin 0.7s linear infinite;
+}
+
+.signup-button.loading .signup-button-text {
+    display: none;
+}
+
+.signup-button.loading .button-loader {
+    display: block;
+}
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================
+   LOGIN LINK
+========================================= */
+
+.login-link {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    margin-top: 25px;
+
+    color: #858ba0;
+
+    font-size: 11px;
+}
+
+.login-link a {
+    color: #7058e8;
+
+    font-weight: 700;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   SECURITY NOTE
+========================================= */
+
+.security-note {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 22px;
+
+    color: #a0a5b6;
+
+    font-size: 9px;
+}
+
+
+/* =========================================
+   CENTER NOTIFICATION
+========================================= */
+
+.notification {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    z-index: 9999;
+
+    width: min(calc(100% - 30px),
+            420px);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 15px;
+
+    background:
+        rgba(20, 23, 43, 0.97);
+
+    color: #ffffff;
+
+    box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.40);
+
+    backdrop-filter: blur(20px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translate(-50%, -40%) scale(0.95);
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease;
+}
+
+.notification.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translate(-50%, -50%) scale(1);
+}
+
+
+/* =========================================
+   NOTIFICATION ICON
+========================================= */
+
+.notification-icon {
+    flex-shrink: 0;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ef476f;
+
+    color: #ffffff;
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.notification.success .notification-icon {
+    background: #19b889;
+}
+
+
+/* =========================================
+   NOTIFICATION CONTENT
+========================================= */
+
+.notification-content {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.notification-content strong {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #ffffff;
+
+    font-size: 13px;
+}
+
+.notification-content p {
+    color: #b4b9cb;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   NOTIFICATION CLOSE
+========================================= */
+
+.notification button {
+    flex-shrink: 0;
+
+    width: 25px;
+    height: 25px;
+
+    border-radius: 6px;
+
+    background: transparent;
+
+    color: #aeb3c5;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.notification button:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+
+    .signup-page {
+        grid-template-columns: 1fr;
+    }
+
+    .signup-brand {
+        display: none;
+    }
+
+    .signup-section {
+        min-height: 100vh;
+
+        padding:
+            40px 25px;
+    }
+
+    .mobile-logo {
+        display: flex;
+    }
+
+    .signup-card {
+        max-width: 500px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL TABLET
+========================================= */
+
+@media (max-width: 650px) {
+
+    .signup-section {
+        padding:
+            30px 18px;
+    }
+
+    .signup-card {
+        padding: 0;
+    }
+
+    .signup-header {
+        margin-bottom: 22px;
+    }
+
+    .signup-header h2 {
+        font-size: 28px;
+    }
+
+    .progress-container {
+        margin-bottom: 24px;
+    }
+
+    .step-heading {
+        margin-bottom: 21px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    body {
+        background: #f7f8fc;
+    }
+
+    .signup-section {
+        padding:
+            24px 15px;
+    }
+
+    .mobile-logo {
+        margin-bottom: 22px;
+    }
+
+    .mobile-logo .brand-logo {
+        width: 52px;
+        height: 52px;
+
+        border-radius: 14px;
+
+        font-size: 22px;
+    }
+
+    .signup-header h2 {
+        font-size: 25px;
+
+        letter-spacing: -0.8px;
+    }
+
+    .signup-header p {
+        font-size: 12px;
+    }
+
+    .header-label {
+        font-size: 9px;
+    }
+
+    .step-heading {
+        gap: 11px;
+    }
+
+    .step-number {
+        width: 38px;
+        height: 38px;
+
+        border-radius: 10px;
+
+        font-size: 10px;
+    }
+
+    .step-heading h3 {
+        font-size: 16px;
+    }
+
+    .step-heading p {
+        font-size: 10px;
+    }
+
+    .form-group label {
+        font-size: 11px;
+    }
+
+    .input-wrapper input {
+        height: 51px;
+
+        font-size: 12px;
+    }
+
+    .next-button,
+    .signup-button {
+        height: 50px;
+
+        font-size: 11px;
+    }
+
+    .back-button {
+        width: 90px;
+
+        height: 50px;
+
+        font-size: 10px;
+    }
+
+    .password-rules {
+        grid-template-columns: 1fr;
+
+        gap: 6px;
+    }
+
+    .account-summary {
+        padding: 12px;
+    }
+
+    .login-link {
+        flex-direction: column;
+
+        gap: 4px;
+
+        margin-top: 22px;
+    }
+
+    .notification {
+        width:
+            calc(100% - 28px);
+
+        padding: 14px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 350px) {
+
+    .signup-section {
+        padding:
+            20px 12px;
+    }
+
+    .signup-header h2 {
+        font-size: 23px;
+    }
+
+    .step-heading h3 {
+        font-size: 15px;
+    }
+
+    .input-wrapper input {
+        height: 49px;
+    }
+
+    .next-button,
+    .signup-button,
+    .back-button {
+        height: 48px;
+    }
+
+    .step-buttons {
+        gap: 7px;
+    }
+
+    .back-button {
+        width: 82px;
+    }
+
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+    outline: 3px solid rgba(112, 88, 232, 0.25);
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}

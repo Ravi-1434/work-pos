@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign Up | Nexus Dashboard</title>
+
+    <link rel="stylesheet" href="signup.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <main class="signup-page">
+
+        <!-- =====================================
+             LEFT BRAND SECTION
+        ====================================== -->
+
+        <section class="signup-brand">
+
+            <div class="brand-decoration brand-decoration-one"></div>
+            <div class="brand-decoration brand-decoration-two"></div>
+
+            <div class="brand-content">
+
+                <div class="brand-logo">
+                    N
+                </div>
+
+                <span class="brand-label">
+                    JOIN NEXUS
+                </span>
+
+                <h1>
+                    Build your
+                    <span>business.</span>
+                </h1>
+
+                <p>
+                    Create your Nexus account and manage
+                    your products, sales, GST and payments
+                    from one powerful dashboard.
+                </p>
+
+                <div class="feature-list">
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Smart Business Dashboard
+                            </strong>
+
+                            <span>
+                                Track your business performance
+                                in one place.
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                GST & Sales Management
+                            </strong>
+
+                            <span>
+                                Monitor sales, GST and payments
+                                easily.
+                            </span>
+                        </div>
+                    </div>
+
+
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            ✓
+                        </div>
+
+                        <div>
+                            <strong>
+                                Secure Account
+                            </strong>
+
+                            <span>
+                                Your account information stays
+                                protected.
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             SIGNUP SECTION
+        ====================================== -->
+
+        <section class="signup-section">
+
+            <div class="signup-card">
+
+                <!-- Mobile Logo -->
+                <div class="mobile-logo">
+
+                    <div class="brand-logo">
+                        N
+                    </div>
+
+                </div>
+
+
+                <!-- Header -->
+                <div class="signup-header">
+
+                    <span class="header-label">
+                        CREATE ACCOUNT
+                    </span>
+
+                    <h2>
+                        Create your account
+                    </h2>
+
+                    <p>
+                        Fill in your details to get started
+                    </p>
+
+                </div>
+
+
+                <!-- =================================
+                     PROGRESS
+                ================================== -->
+
+                <div class="progress-container">
+
+                    <div class="progress-top">
+
+                        <span id="progressText">
+                            Step 1 of 5
+                        </span>
+
+                        <span id="progressPercent">
+                            20%
+                        </span>
+
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div class="progress-fill" id="progressFill"></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================
+                     SIGNUP FORM
+                ================================== -->
+
+                <form id="signupForm" novalidate>
+
+                    <!-- =============================
+                         STEP 1 - NAME
+                    ============================== -->
+
+                    <div class="form-step active" data-step="1">
+
+                        <div class="step-heading">
+
+                            <span class="step-number">
+                                01
+                            </span>
+
+                            <div>
+                                <h3>
+                                    What's your name?
+                                </h3>
+
+                                <p>
+                                    Tell us who you are.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="fullName">
+                                Full Name
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">
+                                    👤
+                                </span>
+
+                                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name"
+                                    autocomplete="name" maxlength="60">
+
+                            </div>
+
+                            <small class="field-error" id="nameError"></small>
+
+                        </div>
+
+
+                        <button type="button" class="next-button" data-next="2" id="nameNext">
+                            Continue
+                            <span>→</span>
+                        </button>
+
+                    </div>
+
+
+                    <!-- =============================
+                         STEP 2 - EMAIL
+                    ============================== -->
+
+                    <div class="form-step" data-step="2">
+
+                        <div class="step-heading">
+
+                            <span class="step-number">
+                                02
+                            </span>
+
+                            <div>
+                                <h3>
+                                    What's your email?
+                                </h3>
+
+                                <p>
+                                    We'll use this for your account.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="signupEmail">
+                                Email Address
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">
+                                    ✉
+                                </span>
+
+                                <input type="email" id="signupEmail" name="email" placeholder="you@example.com"
+                                    autocomplete="email">
+
+                            </div>
+
+                            <small class="field-error" id="signupEmailError"></small>
+
+                        </div>
+
+
+                        <div class="step-buttons">
+
+                            <button type="button" class="back-button" data-back="1">
+                                ← Back
+                            </button>
+
+                            <button type="button" class="next-button" data-next="3" id="emailNext">
+                                Continue
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =============================
+                         STEP 3 - MOBILE
+                    ============================== -->
+
+                    <div class="form-step" data-step="3">
+
+                        <div class="step-heading">
+
+                            <span class="step-number">
+                                03
+                            </span>
+
+                            <div>
+                                <h3>
+                                    Your mobile number
+                                </h3>
+
+                                <p>
+                                    Enter your 10-digit mobile number.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="mobileNumber">
+                                Mobile Number
+                            </label>
+
+                            <div class="input-wrapper mobile-input">
+
+                                <span class="country-code">
+                                    +91
+                                </span>
+
+                                <input type="tel" id="mobileNumber" name="mobile" placeholder="9876543210"
+                                    maxlength="10" inputmode="numeric" autocomplete="tel">
+
+                            </div>
+
+                            <small class="field-error" id="mobileError"></small>
+
+                        </div>
+
+
+                        <div class="step-buttons">
+
+                            <button type="button" class="back-button" data-back="2">
+                                ← Back
+                            </button>
+
+                            <button type="button" class="next-button" data-next="4" id="mobileNext">
+                                Continue
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =============================
+                         STEP 4 - PASSWORD
+                    ============================== -->
+
+                    <div class="form-step" data-step="4">
+
+                        <div class="step-heading">
+
+                            <span class="step-number">
+                                04
+                            </span>
+
+                            <div>
+                                <h3>
+                                    Create a password
+                                </h3>
+
+                                <p>
+                                    Make your account secure.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="signupPassword">
+                                Password
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">
+                                    🔒
+                                </span>
+
+                                <input type="password" id="signupPassword" name="password"
+                                    placeholder="Create your password" autocomplete="new-password">
+
+                                <button type="button" class="password-toggle" id="passwordToggle">
+                                    👁
+                                </button>
+
+                            </div>
+
+                            <small class="field-error" id="signupPasswordError"></small>
+
+                        </div>
+
+
+                        <!-- Password Strength -->
+
+                        <div class="password-strength">
+
+                            <div class="strength-header">
+
+                                <span>
+                                    Password strength
+                                </span>
+
+                                <strong id="strengthText">
+                                    —
+                                </strong>
+
+                            </div>
+
+                            <div class="strength-bar">
+
+                                <span id="strengthFill"></span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Password Rules -->
+
+                        <div class="password-rules">
+
+                            <div class="rule" id="ruleLength">
+                                <span>○</span>
+                                <span>
+                                    At least 8 characters
+                                </span>
+                            </div>
+
+                            <div class="rule" id="ruleUppercase">
+                                <span>○</span>
+                                <span>
+                                    One uppercase letter
+                                </span>
+                            </div>
+
+                            <div class="rule" id="ruleLowercase">
+                                <span>○</span>
+                                <span>
+                                    One lowercase letter
+                                </span>
+                            </div>
+
+                            <div class="rule" id="ruleNumber">
+                                <span>○</span>
+                                <span>
+                                    One number
+                                </span>
+                            </div>
+
+                            <div class="rule" id="ruleSpecial">
+                                <span>○</span>
+                                <span>
+                                    One special character
+                                </span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="step-buttons">
+
+                            <button type="button" class="back-button" data-back="3">
+                                ← Back
+                            </button>
+
+                            <button type="button" class="next-button" data-next="5" id="passwordNext">
+                                Continue
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =============================
+                         STEP 5 - CONFIRM PASSWORD
+                    ============================== -->
+
+                    <div class="form-step" data-step="5">
+
+                        <div class="step-heading">
+
+                            <span class="step-number">
+                                05
+                            </span>
+
+                            <div>
+                                <h3>
+                                    Confirm your account
+                                </h3>
+
+                                <p>
+                                    Enter your password again.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="confirmPassword">
+                                Confirm Password
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <span class="input-icon">
+                                    🔐
+                                </span>
+
+                                <input type="password" id="confirmPassword" name="confirmPassword"
+                                    placeholder="Re-enter your password" autocomplete="new-password">
+
+                                <button type="button" class="password-toggle" id="confirmPasswordToggle">
+                                    👁
+                                </button>
+
+                            </div>
+
+                            <small class="field-error" id="confirmPasswordError"></small>
+
+                        </div>
+
+
+                        <!-- Account Summary -->
+
+                        <div class="account-summary">
+
+                            <div class="summary-title">
+                                Account Details
+                            </div>
+
+                            <div class="summary-row">
+
+                                <span>
+                                    Name
+                                </span>
+
+                                <strong id="summaryName">
+                                    —
+                                </strong>
+
+                            </div>
+
+                            <div class="summary-row">
+
+                                <span>
+                                    Email
+                                </span>
+
+                                <strong id="summaryEmail">
+                                    —
+                                </strong>
+
+                            </div>
+
+                            <div class="summary-row">
+
+                                <span>
+                                    Mobile
+                                </span>
+
+                                <strong id="summaryMobile">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Terms -->
+
+                        <label class="terms-checkbox">
+
+                            <input type="checkbox" id="termsCheckbox">
+
+                            <span>
+                                I agree to the
+                                <a href="#" id="termsLink">
+                                    Terms & Conditions
+                                </a>
+                                and
+                                <a href="#" id="privacyLink">
+                                    Privacy Policy
+                                </a>.
+                            </span>
+
+                        </label>
+
+                        <small class="field-error terms-error" id="termsError"></small>
+
+
+                        <div class="step-buttons">
+
+                            <button type="button" class="back-button" data-back="4">
+                                ← Back
+                            </button>
+
+                            <button type="submit" class="signup-button" id="signupButton">
+
+                                <span class="signup-button-text">
+                                    Create Account
+                                </span>
+
+                                <span class="button-loader" id="buttonLoader"></span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </form>
+
+
+                <!-- Login Link -->
+
+                <div class="login-link">
+
+                    <span>
+                        Already have an account?
+                    </span>
+
+                    <a href="login.html">
+                        Sign in
+                    </a>
+
+                </div>
+
+
+                <!-- Security -->
+
+                <div class="security-note">
+
+                    <span>
+                        🔐
+                    </span>
+
+                    <span>
+                        Your information is securely protected
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================
+         CENTER NOTIFICATION
+    ====================================== -->
+
+    <div class="notification" id="notification">
+
+        <div class="notification-icon" id="notificationIcon">
+            !
+        </div>
+
+        <div class="notification-content">
+
+            <strong id="notificationTitle">
+                Error
+            </strong>
+
+            <p id="notificationMessage">
+                Something went wrong.
+            </p>
+
+        </div>
+
+        <button type="button" id="notificationClose" aria-label="Close notification">
+            ×
+        </button>
+
+    </div>
+
+
+    <script src="signup.js"></script>
+
+</body>
+
+</html>

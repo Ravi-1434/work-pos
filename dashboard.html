@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | STACKLY</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         APP CONTAINER
+    ========================================== -->
+
+    <div class="app-container">
+
+
+        <!-- =====================================
+             MOBILE OVERLAY
+        ====================================== -->
+
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <!-- Logo -->
+
+            <div class="sidebar-logo">
+
+                <div class="logo-box">
+                    S
+                </div>
+
+                <div class="logo-text">
+                    <strong>
+                        STACKLY
+                    </strong>
+
+                    <span>
+                        BUSINESS
+                    </span>
+                </div>
+
+                <button type="button" class="sidebar-close" id="sidebarClose">
+                    ×
+                </button>
+
+            </div>
+
+
+            <!-- Navigation -->
+
+            <nav class="sidebar-nav">
+
+                <div class="nav-section-title">
+                    MAIN MENU
+                </div>
+
+
+                <a href="#" class="nav-item active" data-page="dashboard">
+
+                    <span class="nav-icon">
+                        ▦
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="nav-item" data-page="products">
+
+                    <span class="nav-icon">
+                        ◈
+                    </span>
+
+                    <span>
+                        Products
+                    </span>
+
+                    <span class="nav-badge">
+                        24
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="nav-item" data-page="sales">
+
+                    <span class="nav-icon">
+                        ↗
+                    </span>
+
+                    <span>
+                        Sales
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="nav-item" data-page="invoices">
+
+                    <span class="nav-icon">
+                        ▤
+                    </span>
+
+                    <span>
+                        Invoices
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="nav-item" data-page="customers">
+
+                    <span class="nav-icon">
+                        ◎
+                    </span>
+
+                    <span>
+                        Customers
+                    </span>
+
+                </a>
+
+
+                <div class="nav-section-title second-section">
+                    MANAGEMENT
+                </div>
+
+
+                <a href="#" class="nav-item" data-page="gst">
+
+                    <span class="nav-icon">
+                        %
+                    </span>
+
+                    <span>
+                        GST Reports
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="nav-item" data-page="payments">
+
+                    <span class="nav-icon">
+                        ₹
+                    </span>
+
+                    <span>
+                        Payments
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="nav-item" data-page="reports">
+
+                    <span class="nav-icon">
+                        ◫
+                    </span>
+
+                    <span>
+                        Reports
+                    </span>
+
+                </a>
+
+
+                <a href="#" class="nav-item" data-page="settings">
+
+                    <span class="nav-icon">
+                        ⚙
+                    </span>
+
+                    <span>
+                        Settings
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- Sidebar Bottom -->
+
+            <div class="sidebar-bottom">
+
+                <div class="upgrade-card">
+
+                    <div class="upgrade-icon">
+                        ✦
+                    </div>
+
+                    <strong>
+                        Upgrade your plan
+                    </strong>
+
+                    <p>
+                        Unlock advanced reports
+                        and business tools.
+                    </p>
+
+                    <button type="button" id="upgradeButton">
+                        Upgrade Now
+                    </button>
+
+                </div>
+
+
+                <!-- User -->
+
+                <div class="sidebar-user">
+
+                    <div class="user-avatar" id="sidebarAvatar">
+                        U
+                    </div>
+
+                    <div class="sidebar-user-info">
+
+                        <strong id="sidebarUserName">
+                            User
+                        </strong>
+
+                        <span id="sidebarUserEmail">
+                            user@example.com
+                        </span>
+
+                    </div>
+
+                    <button type="button" class="user-menu-button" id="userMenuButton">
+                        ⋮
+                    </button>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================
+                 TOP HEADER
+            ================================== -->
+
+            <header class="top-header">
+
+
+                <!-- Mobile Menu -->
+
+                <button type="button" class="mobile-menu-button" id="mobileMenuButton" aria-label="Open menu">
+                    ☰
+                </button>
+
+
+                <!-- Search -->
+
+                <div class="global-search">
+
+                    <span class="search-icon">
+                        ⌕
+                    </span>
+
+                    <input type="search" id="globalSearch" placeholder="Search products, invoices..."
+                        autocomplete="off">
+
+                    <span class="search-shortcut">
+                        Ctrl K
+                    </span>
+
+                </div>
+
+
+                <!-- Header Actions -->
+
+                <div class="header-actions">
+
+
+                    <!-- Date -->
+
+                    <div class="current-date">
+
+                        <span class="date-icon">
+                            ◷
+                        </span>
+
+                        <span id="currentDate">
+                            Monday, August 24
+                        </span>
+
+                    </div>
+
+
+                    <!-- Notification -->
+
+                    <button type="button" class="header-icon-button notification-button" id="notificationButton"
+                        aria-label="Notifications">
+
+                        ♢
+
+                        <span class="notification-dot" id="notificationDot"></span>
+
+                    </button>
+
+
+                    <!-- Profile -->
+
+                    <button type="button" class="header-profile" id="headerProfile">
+
+                        <div class="header-avatar" id="headerAvatar">
+                            U
+                        </div>
+
+                        <span class="header-profile-name" id="headerProfileName">
+                            User
+                        </span>
+
+                        <span class="profile-arrow">
+                            ▾
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================
+                 DASHBOARD CONTENT
+            ================================== -->
+
+            <div class="dashboard-content">
+
+
+                <!-- Page Heading -->
+
+                <section class="page-heading">
+
+                    <div>
+
+                        <span class="page-label">
+                            BUSINESS OVERVIEW
+                        </span>
+
+                        <h1>
+                            Good afternoon,
+                            <span id="welcomeName">
+                                User
+                            </span>
+                            👋
+                        </h1>
+
+                        <p>
+                            Here's what's happening with
+                            your business today.
+                        </p>
+
+                    </div>
+
+
+                    <div class="heading-actions">
+
+                        <button type="button" class="secondary-button" id="exportButton">
+                            <span>
+                                ↓
+                            </span>
+
+                            Export
+                        </button>
+
+                        <button type="button" class="primary-button" id="newInvoiceButton">
+                            <span>
+                                +
+                            </span>
+
+                            New Invoice
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================
+                     STAT CARDS
+                ================================== -->
+
+                <section class="stats-grid">
+
+
+                    <!-- Sales -->
+
+                    <article class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div class="stat-icon purple">
+                                ₹
+                            </div>
+
+                            <span class="stat-change positive">
+                                ↑ 12.8%
+                            </span>
+
+                        </div>
+
+                        <div class="stat-title">
+                            Total Sales
+                        </div>
+
+                        <div class="stat-value" id="totalSales">
+                            ₹8,42,650
+                        </div>
+
+                        <div class="stat-footer">
+
+                            <span>
+                                Compared to last month
+                            </span>
+
+                            <span>
+                                +₹95,420
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Products -->
+
+                    <article class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div class="stat-icon blue">
+                                ◈
+                            </div>
+
+                            <span class="stat-change positive">
+                                ↑ 8.4%
+                            </span>
+
+                        </div>
+
+                        <div class="stat-title">
+                            Total Products
+                        </div>
+
+                        <div class="stat-value" id="totalProducts">
+                            1,284
+                        </div>
+
+                        <div class="stat-footer">
+
+                            <span>
+                                Active products
+                            </span>
+
+                            <span>
+                                1,242
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- GST -->
+
+                    <article class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div class="stat-icon green">
+                                %
+                            </div>
+
+                            <span class="stat-change positive">
+                                ↑ 5.7%
+                            </span>
+
+                        </div>
+
+                        <div class="stat-title">
+                            GST Collected
+                        </div>
+
+                        <div class="stat-value" id="totalGST">
+                            ₹1,51,677
+                        </div>
+
+                        <div class="stat-footer">
+
+                            <span>
+                                This financial year
+                            </span>
+
+                            <span>
+                                18%
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Pending -->
+
+                    <article class="stat-card">
+
+                        <div class="stat-card-top">
+
+                            <div class="stat-icon orange">
+                                ◷
+                            </div>
+
+                            <span class="stat-change negative">
+                                ↓ 3.2%
+                            </span>
+
+                        </div>
+
+                        <div class="stat-title">
+                            Pending Payments
+                        </div>
+
+                        <div class="stat-value" id="pendingPayments">
+                            ₹74,820
+                        </div>
+
+                        <div class="stat-footer">
+
+                            <span>
+                                From 18 invoices
+                            </span>
+
+                            <span>
+                                View
+                            </span>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+                <!-- =================================
+                     ANALYTICS ROW
+                ================================== -->
+
+                <section class="analytics-grid">
+
+
+                    <!-- Revenue Chart -->
+
+                    <article class="dashboard-card revenue-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="card-label">
+                                    SALES ANALYTICS
+                                </span>
+
+                                <h2>
+                                    Revenue Overview
+                                </h2>
+
+                            </div>
+
+
+                            <div class="chart-controls">
+
+                                <button type="button" class="chart-period active" data-period="7">
+                                    7D
+                                </button>
+
+                                <button type="button" class="chart-period" data-period="30">
+                                    30D
+                                </button>
+
+                                <button type="button" class="chart-period" data-period="90">
+                                    90D
+                                </button>
+
+                                <button type="button" class="chart-period" data-period="365">
+                                    1Y
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="revenue-summary">
+
+                            <div>
+
+                                <span>
+                                    Total Revenue
+                                </span>
+
+                                <strong id="chartRevenue">
+                                    ₹8,42,650
+                                </strong>
+
+                            </div>
+
+                            <div class="chart-growth">
+                                <span>
+                                    +12.8%
+                                </span>
+
+                                <small>
+                                    vs previous period
+                                </small>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Chart -->
+
+                        <div class="chart-container">
+
+                            <div class="chart-y-axis">
+
+                                <span>
+                                    ₹10L
+                                </span>
+
+                                <span>
+                                    ₹7.5L
+                                </span>
+
+                                <span>
+                                    ₹5L
+                                </span>
+
+                                <span>
+                                    ₹2.5L
+                                </span>
+
+                                <span>
+                                    ₹0
+                                </span>
+
+                            </div>
+
+
+                            <div class="chart-area">
+
+                                <div class="chart-grid-lines">
+
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+
+                                </div>
+
+
+                                <svg class="revenue-svg" viewBox="0 0 700 250" preserveAspectRatio="none"
+                                    aria-label="Revenue chart">
+
+                                    <defs>
+
+                                        <linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">
+
+                                            <stop offset="0%" stop-color="#7b61ff" stop-opacity="0.30" />
+
+                                            <stop offset="100%" stop-color="#7b61ff" stop-opacity="0" />
+
+                                        </linearGradient>
+
+                                    </defs>
+
+
+                                    <path id="revenueArea" d="
+                                            M0,205
+                                            C45,195 55,175 100,183
+                                            C145,191 155,155 200,165
+                                            C245,175 255,125 300,142
+                                            C345,159 360,115 400,125
+                                            C440,135 455,90 500,105
+                                            C545,120 560,62 600,78
+                                            C640,94 660,45 700,55
+                                            L700,250
+                                            L0,250
+                                            Z
+                                        " fill="url(#revenueGradient)"></path>
+
+
+                                    <path id="revenueLine" d="
+                                            M0,205
+                                            C45,195 55,175 100,183
+                                            C145,191 155,155 200,165
+                                            C245,175 255,125 300,142
+                                            C345,159 360,115 400,125
+                                            C440,135 455,90 500,105
+                                            C545,120 560,62 600,78
+                                            C640,94 660,45 700,55
+                                        " fill="none" stroke="#7058e8" stroke-width="4" stroke-linecap="round"></path>
+
+
+                                    <circle cx="700" cy="55" r="6" fill="#7058e8" stroke="#ffffff" stroke-width="3">
+                                    </circle>
+
+                                </svg>
+
+
+                                <div class="chart-x-axis">
+
+                                    <span>
+                                        Mon
+                                    </span>
+
+                                    <span>
+                                        Tue
+                                    </span>
+
+                                    <span>
+                                        Wed
+                                    </span>
+
+                                    <span>
+                                        Thu
+                                    </span>
+
+                                    <span>
+                                        Fri
+                                    </span>
+
+                                    <span>
+                                        Sat
+                                    </span>
+
+                                    <span>
+                                        Sun
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- GST Card -->
+
+                    <article class="dashboard-card gst-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="card-label">
+                                    TAX OVERVIEW
+                                </span>
+
+                                <h2>
+                                    GST Summary
+                                </h2>
+
+                            </div>
+
+                            <button type="button" class="more-button" id="gstMoreButton">
+                                ⋮
+                            </button>
+
+                        </div>
+
+
+                        <div class="gst-chart-wrapper">
+
+                            <div class="donut-chart">
+
+                                <div class="donut-center">
+
+                                    <strong>
+                                        18%
+                                    </strong>
+
+                                    <span>
+                                        GST Rate
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="gst-legend">
+
+                            <div class="legend-item">
+
+                                <span class="legend-dot cgst"></span>
+
+                                <div>
+                                    <strong>
+                                        CGST
+                                    </strong>
+
+                                    <span>
+                                        ₹75,838
+                                    </span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="legend-item">
+
+                                <span class="legend-dot sgst"></span>
+
+                                <div>
+                                    <strong>
+                                        SGST
+                                    </strong>
+
+                                    <span>
+                                        ₹75,839
+                                    </span>
+                                </div>
+
+                            </div>
+
+
+                            <div class="legend-item">
+
+                                <span class="legend-dot igst"></span>
+
+                                <div>
+                                    <strong>
+                                        IGST
+                                    </strong>
+
+                                    <span>
+                                        ₹0
+                                    </span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <button type="button" class="view-report-button" id="gstReportButton">
+                            View GST Report
+                            <span>
+                                →
+                            </span>
+                        </button>
+
+                    </article>
+
+                </section>
+
+
+                <!-- =================================
+                     BOTTOM ROW
+                ================================== -->
+
+                <section class="bottom-grid">
+
+
+                    <!-- Recent Transactions -->
+
+                    <article class="dashboard-card transactions-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="card-label">
+                                    RECENT ACTIVITY
+                                </span>
+
+                                <h2>
+                                    Recent Transactions
+                                </h2>
+
+                            </div>
+
+                            <button type="button" class="view-all-button" id="viewAllTransactions">
+                                View All →
+                            </button>
+
+                        </div>
+
+
+                        <div class="table-wrapper">
+
+                            <table>
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            INVOICE
+                                        </th>
+
+                                        <th>
+                                            CUSTOMER
+                                        </th>
+
+                                        <th>
+                                            DATE
+                                        </th>
+
+                                        <th>
+                                            AMOUNT
+                                        </th>
+
+                                        <th>
+                                            STATUS
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="transactionTable">
+
+                                    <tr>
+
+                                        <td>
+                                            <strong>
+                                                INV-00124
+                                            </strong>
+                                        </td>
+
+                                        <td>
+
+                                            <div class="customer-cell">
+
+                                                <div class="mini-avatar avatar-one">
+                                                    AS
+                                                </div>
+
+                                                <div>
+                                                    <strong>
+                                                        Arun Stores
+                                                    </strong>
+
+                                                    <span>
+                                                        Retail
+                                                    </span>
+                                                </div>
+
+                                            </div>
+
+                                        </td>
+
+                                        <td>
+                                            Aug 24, 2026
+                                        </td>
+
+                                        <td>
+                                            <strong>
+                                                ₹42,500
+                                            </strong>
+                                        </td>
+
+                                        <td>
+                                            <span class="status paid">
+                                                Paid
+                                            </span>
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+
+                                        <td>
+                                            <strong>
+                                                INV-00123
+                                            </strong>
+                                        </td>
+
+                                        <td>
+
+                                            <div class="customer-cell">
+
+                                                <div class="mini-avatar avatar-two">
+                                                    KP
+                                                </div>
+
+                                                <div>
+                                                    <strong>
+                                                        Kumar Pharma
+                                                    </strong>
+
+                                                    <span>
+                                                        Wholesale
+                                                    </span>
+                                                </div>
+
+                                            </div>
+
+                                        </td>
+
+                                        <td>
+                                            Aug 23, 2026
+                                        </td>
+
+                                        <td>
+                                            <strong>
+                                                ₹68,200
+                                            </strong>
+                                        </td>
+
+                                        <td>
+                                            <span class="status pending">
+                                                Pending
+                                            </span>
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+
+                                        <td>
+                                            <strong>
+                                                INV-00122
+                                            </strong>
+                                        </td>
+
+                                        <td>
+
+                                            <div class="customer-cell">
+
+                                                <div class="mini-avatar avatar-three">
+                                                    VM
+                                                </div>
+
+                                                <div>
+                                                    <strong>
+                                                        Varun Mart
+                                                    </strong>
+
+                                                    <span>
+                                                        Retail
+                                                    </span>
+                                                </div>
+
+                                            </div>
+
+                                        </td>
+
+                                        <td>
+                                            Aug 22, 2026
+                                        </td>
+
+                                        <td>
+                                            <strong>
+                                                ₹31,750
+                                            </strong>
+                                        </td>
+
+                                        <td>
+                                            <span class="status paid">
+                                                Paid
+                                            </span>
+                                        </td>
+
+                                    </tr>
+
+
+                                    <tr>
+
+                                        <td>
+                                            <strong>
+                                                INV-00121
+                                            </strong>
+                                        </td>
+
+                                        <td>
+
+                                            <div class="customer-cell">
+
+                                                <div class="mini-avatar avatar-four">
+                                                    RS
+                                                </div>
+
+                                                <div>
+                                                    <strong>
+                                                        Royal Suppliers
+                                                    </strong>
+
+                                                    <span>
+                                                        Wholesale
+                                                    </span>
+                                                </div>
+
+                                            </div>
+
+                                        </td>
+
+                                        <td>
+                                            Aug 21, 2026
+                                        </td>
+
+                                        <td>
+                                            <strong>
+                                                ₹54,900
+                                            </strong>
+                                        </td>
+
+                                        <td>
+                                            <span class="status overdue">
+                                                Overdue
+                                            </span>
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Quick Actions -->
+
+                    <article class="dashboard-card quick-card">
+
+                        <div class="card-header">
+
+                            <div>
+
+                                <span class="card-label">
+                                    SHORTCUTS
+                                </span>
+
+                                <h2>
+                                    Quick Actions
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="quick-actions">
+
+                            <button type="button" class="quick-action" id="quickInvoice">
+
+                                <span class="quick-icon purple">
+                                    +
+                                </span>
+
+                                <span>
+                                    <strong>
+                                        Create Invoice
+                                    </strong>
+
+                                    <small>
+                                        Generate a new invoice
+                                    </small>
+                                </span>
+
+                                <span class="quick-arrow">
+                                    →
+                                </span>
+
+                            </button>
+
+
+                            <button type="button" class="quick-action" id="quickProduct">
+
+                                <span class="quick-icon blue">
+                                    ◈
+                                </span>
+
+                                <span>
+                                    <strong>
+                                        Add Product
+                                    </strong>
+
+                                    <small>
+                                        Add a new product
+                                    </small>
+                                </span>
+
+                                <span class="quick-arrow">
+                                    →
+                                </span>
+
+                            </button>
+
+
+                            <button type="button" class="quick-action" id="quickCustomer">
+
+                                <span class="quick-icon green">
+                                    ◎
+                                </span>
+
+                                <span>
+                                    <strong>
+                                        Add Customer
+                                    </strong>
+
+                                    <small>
+                                        Save customer details
+                                    </small>
+                                </span>
+
+                                <span class="quick-arrow">
+                                    →
+                                </span>
+
+                            </button>
+
+
+                            <button type="button" class="quick-action" id="quickReport">
+
+                                <span class="quick-icon orange">
+                                    ◫
+                                </span>
+
+                                <span>
+                                    <strong>
+                                        Generate Report
+                                    </strong>
+
+                                    <small>
+                                        View business analytics
+                                    </small>
+                                </span>
+
+                                <span class="quick-arrow">
+                                    →
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+                <!-- =================================
+                     BUSINESS INSIGHT
+                ================================== -->
+
+                <section class="insight-card">
+
+                    <div class="insight-icon">
+                        ✦
+                    </div>
+
+                    <div class="insight-content">
+
+                        <span>
+                            BUSINESS INSIGHT
+                        </span>
+
+                        <strong>
+                            Your sales are performing 12.8% better
+                            than last month.
+                        </strong>
+
+                        <p>
+                            Keep up the momentum. Your top-selling
+                            category this month is Electronics.
+                        </p>
+
+                    </div>
+
+                    <button type="button" id="insightButton">
+                        View Analytics →
+                    </button>
+
+                </section>
+
+
+            </div>
+
+        </main>
+
+
+        <!-- =====================================
+             USER DROPDOWN
+        ====================================== -->
+
+        <div class="user-dropdown" id="userDropdown">
+
+            <div class="dropdown-user-info">
+
+                <div class="dropdown-avatar" id="dropdownAvatar">
+                    U
+                </div>
+
+                <div>
+
+                    <strong id="dropdownName">
+                        User
+                    </strong>
+
+                    <span id="dropdownEmail">
+                        user@example.com
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="dropdown-divider"></div>
+
+
+            <button type="button" class="dropdown-item" id="profileButton">
+                <span>◎</span>
+                My Profile
+            </button>
+
+
+            <button type="button" class="dropdown-item" id="settingsButton">
+                <span>⚙</span>
+                Settings
+            </button>
+
+
+            <div class="dropdown-divider"></div>
+
+
+            <button type="button" class="dropdown-item logout-item" id="logoutButton">
+                <span>↪</span>
+                Logout
+            </button>
+
+        </div>
+
+
+        <!-- =====================================
+             NOTIFICATION PANEL
+        ====================================== -->
+
+        <div class="notification-panel" id="notificationPanel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <strong>
+                        Notifications
+                    </strong>
+
+                    <span>
+                        3 new updates
+                    </span>
+
+                </div>
+
+                <button type="button" id="closeNotificationPanel">
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="notification-list">
+
+                <div class="notification-item unread">
+
+                    <div class="notification-item-icon purple">
+                        ₹
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Payment received
+                        </strong>
+
+                        <p>
+                            ₹42,500 received from Arun Stores.
+                        </p>
+
+                        <small>
+                            15 minutes ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-item unread">
+
+                    <div class="notification-item-icon orange">
+                        !
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Invoice overdue
+                        </strong>
+
+                        <p>
+                            INV-00121 is overdue by 3 days.
+                        </p>
+
+                        <small>
+                            2 hours ago
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="notification-item unread">
+
+                    <div class="notification-item-icon green">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            GST report ready
+                        </strong>
+
+                        <p>
+                            Your monthly GST report is ready.
+                        </p>
+
+                        <small>
+                            Yesterday
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button type="button" class="notification-footer" id="markNotificationsRead">
+                Mark all as read
+            </button>
+
+        </div>
+
+
+        <!-- =====================================
+             GENERAL MODAL
+        ====================================== -->
+
+        <div class="modal-overlay" id="modalOverlay">
+
+            <div class="general-modal" id="generalModal">
+
+                <button type="button" class="modal-close" id="modalClose">
+                    ×
+                </button>
+
+                <div class="modal-icon" id="modalIcon">
+                    ✦
+                </div>
+
+                <h2 id="modalTitle">
+                    Coming Soon
+                </h2>
+
+                <p id="modalMessage">
+                    This feature will be available soon.
+                </p>
+
+                <button type="button" class="modal-button" id="modalAction">
+                    Got it
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             LOGOUT CONFIRMATION
+        ====================================== -->
+
+        <div class="modal-overlay" id="logoutModal">
+
+            <div class="general-modal logout-modal">
+
+                <div class="modal-icon logout-icon">
+                    ↪
+                </div>
+
+                <h2>
+                    Logout?
+                </h2>
+
+                <p>
+                    Are you sure you want to sign out
+                    of your Nexus account?
+                </p>
+
+                <div class="modal-buttons">
+
+                    <button type="button" class="modal-cancel" id="cancelLogout">
+                        Cancel
+                    </button>
+
+                    <button type="button" class="modal-logout" id="confirmLogout">
+                        Logout
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>
