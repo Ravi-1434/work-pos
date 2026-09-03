@@ -1602,7 +1602,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 () => {
 
                     window.location.href =
-                        "login.html";
+                        "loging.html";
 
                 },
                 1800
@@ -1693,5 +1693,5 @@ localStorage.setItem(
 showSuccess("Account created successfully! Redirecting to login...");
 
 setTimeout(function () {
-    window.location.href = "login.html";
+    window.location.href = "loging.html";
 }, 1500);

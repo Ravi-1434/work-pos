@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sales | STACKLY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-[#f7f7fb] text-[#17152a]">
+    <div id="toast"
+        class="fixed bottom-6 left-1/2 z-50 hidden -translate-x-1/2 rounded-xl bg-[#17152a] px-5 py-3 text-white shadow-xl">
+    </div>
+    <header class="flex h-16 items-center justify-between border-b bg-white px-4 md:px-8"><a
+            href="dashboard-tailwind.html" class="font-bold text-[#7058e8]">STACKLY</a>
+        <div class="flex gap-2"><a href="dashboard.html"
+                class="rounded-lg px-3 py-2 text-sm hover:bg-gray-100">Dashboard</a><a href="products.html"
+                class="rounded-lg px-3 py-2 text-sm hover:bg-gray-100">Products</a></div>
+    </header>
+    <main class="mx-auto max-w-7xl p-4 md:p-8">
+        <div class="mb-6 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+                <p class="text-xs font-bold tracking-widest text-[#7058e8]">SALES MANAGEMENT</p>
+                <h1 class="text-3xl font-extrabold">Sales</h1>
+                <p class="text-sm text-gray-500">Track invoices, customers, payments and sales status.</p>
+            </div><button id="new" class="rounded-xl bg-[#7058e8] px-5 py-3 font-bold text-white">+ New Sale</button>
+        </div>
+        <div class="mb-5 grid gap-4 sm:grid-cols-3">
+            <div class="rounded-2xl border bg-white p-5">
+                <p class="text-xs text-gray-500">Today's Sales</p><b class="mt-2 block text-2xl">₹54,900</b>
+            </div>
+            <div class="rounded-2xl border bg-white p-5">
+                <p class="text-xs text-gray-500">This Month</p><b class="mt-2 block text-2xl">₹8,42,650</b>
+            </div>
+            <div class="rounded-2xl border bg-white p-5">
+                <p class="text-xs text-gray-500">Pending</p><b class="mt-2 block text-2xl">₹74,820</b>
+            </div>
+        </div>
+        <div class="mb-4 flex flex-col gap-3 md:flex-row"><input id="search"
+                class="flex-1 rounded-xl border bg-white p-3 outline-none"
+                placeholder="Search sales, customer, invoice or status..."><select id="status"
+                class="rounded-xl border bg-white px-3">
+                <option>All Status</option>
+                <option>Paid</option>
+                <option>Pending</option>
+                <option>Overdue</option>
+            </select><button id="export" class="rounded-xl border bg-white px-4 font-bold">↓ Export</button></div>
+        <div class="overflow-hidden rounded-2xl border bg-white shadow-sm overflow-x-auto">
+            <table class="w-full min-w-[800px] text-left text-sm">
+                <thead class="border-b bg-gray-50 text-xs text-gray-500">
+                    <tr>
+                        <th class="p-4">INVOICE</th>
+                        <th class="p-4">CUSTOMER</th>
+                        <th class="p-4">DATE</th>
+                        <th class="p-4">AMOUNT</th>
+                        <th class="p-4">STATUS</th>
+                        <th class="p-4">ACTION</th>
+                    </tr>
+                </thead>
+                <tbody id="list"></tbody>
+            </table>
+        </div>
+    </main>
+    <div id="modal" class="fixed inset-0 z-40 hidden items-center justify-center bg-black/40 p-4">
+        <form id="form" class="w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl">
+            <h2 class="text-xl font-bold">New Sale</h2><input id="customer" required
+                class="mt-4 w-full rounded-lg border p-3" placeholder="Customer name"><input id="amount" required
+                type="number" class="mt-2 w-full rounded-lg border p-3" placeholder="Amount"><select id="saleStatus"
+                class="mt-2 w-full rounded-lg border p-3">
+                <option>Paid</option>
+                <option>Pending</option>
+                <option>Overdue</option>
+            </select>
+            <div class="mt-4 flex gap-2"><button class="flex-1 rounded-lg bg-[#7058e8] p-3 font-bold text-white">Save
+                    Sale</button><button type="button" id="cancel"
+                    class="flex-1 rounded-lg bg-gray-100 p-3">Cancel</button></div>
+        </form>
+    </div>
+    <script>
+        let data = JSON.parse(localStorage.getItem("stacklySales") || "null") || [{ invoice: "INV-00124", customer: "Arun Stores", date: "Aug 24, 2026", amount: 54900, status: "Paid" }, { invoice: "INV-00123", customer: "Mehta Traders", date: "Aug 23, 2026", amount: 32400, status: "Pending" }, { invoice: "INV-00122", customer: "Nexus Retail", date: "Aug 22, 2026", amount: 18750, status: "Paid" }, { invoice: "INV-00121", customer: "Sri Lakshmi", date: "Aug 21, 2026", amount: 54900, status: "Overdue" }];
+        const $ = s => document.querySelector(s), toast = m => { let t = $("#toast"); t.textContent = m; t.classList.remove("hidden"); setTimeout(() => t.classList.add("hidden"), 2000) };
+        function save() { localStorage.setItem("stacklySales", JSON.stringify(data)); render() }
+        function render() { let q = $("#search").value.toLowerCase(), f = $("#status").value, a = data.filter(s => (s.invoice + " " + s.customer + " " + s.date + " " + s.amount + " " + s.status).toLowerCase().includes(q) && (f == "All Status" || s.status == f)); $("#list").innerHTML = a.map(s => { let i = data.indexOf(s); return `<tr class="border-b"><td class="p-4 font-bold">${s.invoice}</td><td class="p-4">${s.customer}</td><td class="p-4">${s.date}</td><td class="p-4 font-bold">₹${Number(s.amount).toLocaleString("en-IN")}</td><td class="p-4">${s.status}</td><td class="p-4"><button onclick="view(${i})" class="mr-2 text-[#7058e8]">View</button><button onclick="del(${i})" class="text-red-600">Delete</button></td></tr>` }).join("") || '<tr><td colspan="6" class="p-8 text-center text-gray-500">No sales found.</td></tr>' }
+        function view(i) { alert("Invoice: " + data[i].invoice + "\nCustomer: " + data[i].customer + "\nAmount: ₹" + Number(data[i].amount).toLocaleString("en-IN") + "\nStatus: " + data[i].status) } function del(i) { if (confirm("Delete this sale?")) { data.splice(i, 1); save(); toast("Sale deleted") } }
+        $("#search").oninput = render; $("#status").onchange = render; $("#new").onclick = () => { $("#modal").classList.remove("hidden"); $("#modal").classList.add("flex") }; $("#cancel").onclick = () => { $("#modal").classList.add("hidden"); $("#modal").classList.remove("flex") };
+        $("#form").onsubmit = e => { e.preventDefault(); data.unshift({ invoice: "INV-" + String(Date.now()).slice(-5), customer: $("#customer").value, date: new Date().toLocaleDateString("en-IN", { month: "short", day: "2-digit", year: "numeric" }), amount: +$("#amount").value, status: $("#saleStatus").value }); save(); e.target.reset(); $("#cancel").click(); toast("Sale added successfully") };
+        $("#export").onclick = () => { let a = document.createElement("a"); a.href = URL.createObjectURL(new Blob(["Invoice,Customer,Date,Amount,Status\n" + data.map(s => [s.invoice, s.customer, s.date, s.amount, s.status].join(",")).join("\n")], { type: "text/csv" })); a.download = "sales-report.csv"; a.click(); toast("Sales report exported") }; render();
+    </script>
+</body>
+
+</html>
